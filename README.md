@@ -2,18 +2,19 @@
 A simple bash script to get an echo command from a text file, in order to recreate it from the command.  
 Doesn't work on binary files.
 
+## Download
+```bash
+wget https://raw.githubusercontent.com/Sad-theFaceless/file2echo/main/file2echo.sh && chmod +x file2echo.sh
+```
+
 ## How to use
 ### Get the echo command
-```bash
-bash file2echo.sh $FILE
-```
-or with the execute permission given
 ```bash
 ./file2echo.sh $FILE
 ```
 ### Directly recreate a new file from the echo command
 ```bash
-bash file2echo.sh $FILE | bash > $NEW_FILE
+./file2echo.sh $FILE | bash > $NEW_FILE
 ```
 
 ## Example
@@ -25,7 +26,7 @@ dig +short myip.opendns.com @resolver1.opendns.com A
 ```
 Inside the terminal:
 ```bash
-bash file2echo.sh getIP.sh
+./file2echo.sh getIP.sh
 ```
 Output:
 ```bash
