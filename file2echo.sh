@@ -2,8 +2,11 @@
 
 enable_auto_updates=true #Set to 'false' to disable auto updates
 
-auto_update () {( set -e
-    file_network=$(wget -qO- "$1")
+auto_update () {
+    if ! file_network=$(wget -qO- "$1"); then
+        #Unable to update. No internet ?
+        return 1
+    fi
     hash_local=$(md5sum "$2" | awk '{ print $1 }')
     hash_network=$(echo -E "$file_network" | md5sum | awk '{ print $1 }')
     if [[ "$hash_local" != "$hash_network" ]]; then
@@ -13,9 +16,8 @@ auto_update () {( set -e
         chmod --reference="$2" "$tmpfile"
         mv "$tmpfile" "$2"
         exec "${@:2}"
-        exit "$?"
     fi
-)}
+}
 
 parsing () {
     if [ $# -ne 1 ]; then
