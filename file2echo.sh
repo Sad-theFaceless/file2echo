@@ -13,6 +13,7 @@ function auto_update {( set -e
         chmod --reference="$2" "$tmpfile"
         mv "$tmpfile" "$2"
         exec "${@:2}"
+        exit "$?"
     fi
 )}
 
