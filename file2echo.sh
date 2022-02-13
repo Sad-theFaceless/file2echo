@@ -2,7 +2,7 @@
 
 enable_auto_updates=true #Set to 'false' to disable auto updates
 
-function auto_update {( set -e
+auto_update () {( set -e
     file_network=$(wget -qO- "$1")
     hash_local=$(md5sum "$2" | awk '{ print $1 }')
     hash_network=$(echo -E "$file_network" | md5sum | awk '{ print $1 }')
@@ -17,7 +17,7 @@ function auto_update {( set -e
     fi
 )}
 
-function parsing {
+parsing () {
     if [ $# -ne 1 ]; then
         echo "Syntax: $0 FILE"
         exit 1
@@ -29,7 +29,7 @@ function parsing {
     fi
 }
 
-function main {
+main () {
     number=0
     number_total=$(wc -m < "$1")
 
@@ -69,14 +69,15 @@ function main {
     echo -ne "    \r" >&2
 
     command="$command'"
-    echo -E "$command"
 }
 
 if [ "$enable_auto_updates" = true ] ; then
     auto_update "https://raw.githubusercontent.com/Sad-theFaceless/file2echo/main/file2echo.sh" "$0" "$@"
 fi
 parsing "$@"
-command=$(main "$1")
+
+command=""
+main "$1"
 echo -E "$command"
 
 exit 0
