@@ -3,9 +3,17 @@
 enable_auto_updates=true #Set to 'false' to disable auto updates
 
 auto_update () {
-    if ! file_network=$(wget -qO- "$1"); then
-        #Unable to update. No internet ?
-        return 1
+    if wget -V > /dev/null 2>&1; then
+        if ! file_network=$(wget -qO- "$1"); then
+            return 1
+        fi
+    elif curl -V > /dev/null 2>&1; then
+        if ! file_network=$(curl -fsSL "$1"); then
+            return 1
+        fi
+    else
+        # wget and curl not found, can't check for update
+        return 2
     fi
     hash_local=$(md5sum "$2" | awk '{ print $1 }')
     hash_network=$(echo -E "$file_network" | md5sum | awk '{ print $1 }')
@@ -77,7 +85,6 @@ if [ "$enable_auto_updates" = true ] ; then
     auto_update "https://raw.githubusercontent.com/Sad-theFaceless/file2echo/main/file2echo.sh" "$0" "$@"
 fi
 parsing "$@"
-
 command=""
 main "$1"
 echo -E "$command"
