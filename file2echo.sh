@@ -4,7 +4,7 @@ enable_auto_updates=true #Set to 'false' to disable auto updates
 
 auto_update () {
     if wget -V > /dev/null 2>&1; then
-        if ! file_network=$(wget -qO- "$1"); then
+        if ! file_network=$(wget -qO- --no-cache "$1"); then
             return 1
         fi
     elif curl -V > /dev/null 2>&1; then
