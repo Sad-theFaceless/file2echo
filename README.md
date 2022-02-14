@@ -3,9 +3,15 @@ A simple bash script to get an echo command from a text file, in order to recrea
 Doesn't work on binary files.
 
 ## Download
+### GNU/Linux
 ```bash
 wget https://raw.githubusercontent.com/Sad-theFaceless/file2echo/main/file2echo.sh && chmod +x file2echo.sh
 ```
+### Windows
+- Open the [link to the raw script](https://raw.githubusercontent.com/Sad-theFaceless/file2echo/main/file2echo.sh), right click and **Save as...**
+- Install [Git for Windows](https://github.com/git-for-windows/git/releases/latest) (the one ending with **-64-bit.exe**)
+  - Make sure the box "Git Bash Here" is checked
+- Right click on your File Explorer where you saved the script, then click on **Git Bash Here**
 
 ## How to use
 ### Get the echo command
