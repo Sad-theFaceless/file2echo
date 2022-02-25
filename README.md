@@ -10,7 +10,8 @@ wget https://raw.githubusercontent.com/Sad-theFaceless/file2echo/main/file2echo.
 ### Windows
 - Open the [link to the raw script](https://raw.githubusercontent.com/Sad-theFaceless/file2echo/main/file2echo.sh), right click and **Save as...**
 - Install [Git for Windows](https://github.com/git-for-windows/git/releases/latest) (the one ending with **-64-bit.exe**)
-  - Make sure the box "Git Bash Here" is checked
+  - Make sure the box "**Git Bash Here**" is checked
+  - Select "**Use Windows' default console window**" to get a prettier terminal
 - Right click on your File Explorer where you saved the script, then click on **Git Bash Here**
 
 ## How to use
