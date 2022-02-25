@@ -11,6 +11,9 @@ wget https://raw.githubusercontent.com/Sad-theFaceless/file2echo/main/file2echo.
 - Open the [link to the raw .ps1 script](https://raw.githubusercontent.com/Sad-theFaceless/file2echo/main/file2echo.ps1), right click and **Save as...**
 - Right click on the downloaded file, then click on **Run with PowerShell**
 
+The first time you launch the PowerShell script, it will download all the prerequisite files in a temporary directory.  
+It will then open a new prompt window to run the actual Bash script. ([see How to use](#how-to-use))
+
 ## How to use
 ### Get the echo command
 ```bash
