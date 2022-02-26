@@ -8,11 +8,11 @@ Doesn't work on binary files.
 wget https://raw.githubusercontent.com/Sad-theFaceless/file2echo/main/file2echo.sh && chmod +x file2echo.sh
 ```
 ### Windows
-- Open the [link to the raw .ps1 script](https://raw.githubusercontent.com/Sad-theFaceless/file2echo/main/file2echo.ps1), right click and **Save as...**
-- Right click on the downloaded file, then click on **Run with PowerShell**
+- Right click on the .ps1 script file, and **Save link as...** (verify the extension is .ps1)
+- Once the file is downloaded, right click on it then **Run with PowerShell**
 
 The first time you launch the PowerShell script, it will download all the prerequisite files in a temporary directory.  
-It will then open a new prompt window to run the actual Bash script. ([see How to use](#how-to-use))
+It will then open a new prompt window that allows you to run the actual Bash script. ([see How to use](#how-to-use))
 
 ## How to use
 ### Get the echo command
