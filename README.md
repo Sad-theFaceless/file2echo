@@ -8,7 +8,7 @@ Doesn't work on binary files.
 wget https://raw.githubusercontent.com/Sad-theFaceless/file2echo/main/file2echo.sh && chmod +x file2echo.sh
 ```
 ### Windows
-- Right click on the .ps1 script file, and **Save link as...** (verify the extension is .ps1)
+- Right click on [this link](https://github.com/Sad-theFaceless/file2echo/raw/main/file2echo.ps1), and **Save link as...**
 - Once the file is downloaded, right click on it then **Run with PowerShell**
 
 The first time you launch the PowerShell script, it will download all the prerequisite files in a temporary directory.  
