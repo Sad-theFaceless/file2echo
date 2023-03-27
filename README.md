@@ -14,7 +14,7 @@ wget https://raw.githubusercontent.com/Sad-theFaceless/file2echo/main/file2echo.
 *The first time you launch the PowerShell script, it will download all the prerequisite files in a temporary directory.  
 It will then open a new prompt window that allows you to run the actual Bash script. ([see How to use](#how-to-use))*
 
-## How to use
+## Usage
 ### Get the echo command
 ```bash
 ./file2echo.sh $FILE
